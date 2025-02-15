@@ -1,0 +1,86 @@
+.h-wrapper {
+    width: 100%;
+    color: white;
+    position: relative;
+    z-index: 100;
+}
+
+.h-container {
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    color: var(--secondary);
+}
+
+/* Desktop Navigation Menu */
+.h-menu {
+    display: flex;
+    gap: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.h-menu a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.h-menu a:hover {
+    color: var(--blue);
+}
+
+/* Contact Button */
+.button a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+/* 📌 Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        z-index: 1000;
+    }
+
+    /* 📌 Mobile Menu */
+    .h-menu {
+        position: fixed;
+        top: 4rem; /* Placed below the header */
+        right: -100%; /* Initially hidden */
+        width: 45%; /* Reduced width */
+        max-height: 300px; /* Limited height */
+        background: rgba(255, 255, 255, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 0;
+        border-radius: 10px;
+        box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease-in-out;
+        z-index: 999; /* Ensures it appears above hero section */
+        backdrop-filter: blur(10px);
+    }
+
+    /* 📌 Show Mobile Menu */
+    .h-menu.active {
+        right: 1rem; /* Adjusted to be visible */
+    }
+
+    .h-menu a {
+        color: var(--black);
+        font-size: 1rem;
+    }
+
+    .h-menu .button {
+        width: 80%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,148 @@
+.v-container .image-container {
+    border: 8px solid rgba(232, 232, 232, 0.93);
+    width: 100%;
+    max-width: 400px;
+}
+
+.v-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.v-container > div {
+    flex: 1;
+}
+
+.v-right {
+    gap: 0.5rem;
+}
+
+/* Accordion Styling */
+.accordion {
+    margin-top: 2rem;
+    border: none;
+    width: 100%;
+}
+
+.accordionItem {
+    background: white;
+    border: 1px solid rgba(128, 128, 128, 0.143);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Expanded Accordion */
+.accordionItem.expanded {
+    box-shadow: var(--shadow);
+    border-radius: 6px;
+}
+
+/* Accordion Button */
+.accordionButton {
+    background: white;
+    padding: 1rem;
+    width: 100%;
+    justify-content: space-between;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Icon Styling */
+.icon {
+    padding: 10px;
+    background: #eeeeff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.icon svg {
+    fill: var(--blue);
+}
+
+/* Rotate icon when expanded */
+.rotate {
+    transform: rotate(180deg);
+}
+
+/* Text Styling */
+.accordionButton .primaryText {
+    font-size: 1.1rem;
+}
+
+/* Accordion Panel Content */
+.accordionItemPanel {
+    padding: 1rem;
+    background: #f9f9f9;
+    border-top: 1px solid rgba(128, 128, 128, 0.143);
+}
+
+/* Hide Panel Content Initially */
+.accordionItem.collapsed .accordionItemPanel {
+    display: none;
+}
+
+/* 📌 Responsive Design */
+@media (max-width: 1024px) {
+    .v-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .v-left, .v-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .v-container .image-container {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .v-container {
+        padding: 1rem;
+    }
+
+    .accordionButton {
+        padding: 0.8rem;
+    }
+
+    .accordionButton .primaryText {
+        font-size: 1rem;
+    }
+
+    .icon {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .v-container {
+        padding: 0.5rem;
+    }
+
+    .accordion {
+        margin-top: 1rem;
+    }
+
+    .accordionButton {
+        padding: 0.6rem;
+    }
+
+    .accordionButton .primaryText {
+        font-size: 0.9rem;
+    }
+
+    .icon {
+        padding: 6px;
+    }
+
+    .accordionItemPanel {
+        padding: 0.8rem;
+    }
+}
